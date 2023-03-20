@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20230319173024",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "plateforme_paiement",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentType",
+      "fieldType": "TypePaiement",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CB,VISA,IZLY,Mastercard,Apple_Pay,Google_Pay,Paypal,Cheques_Restaurant,Bitcoin,Izly"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PlateformePaiement",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "creationDate",
+      "otherEntityName": "commande",
+      "relationshipName": "commande",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}
